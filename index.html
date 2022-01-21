@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/main.css">
+    <title>Score keeper</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container__img"><img src="https://images.unsplash.com/photo-1534158914592-062992fbe900?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3784&q=80"></div>
+        <div class="container__title"><p class="container__title__p">Ping Pong score keeper</p></div>
+        <div class="container__main">
+            <div class="container__main__score"><span id="player-one-score">0</span> to <span id="player-two-score">0</span></div>
+            <p class="container__main__subtitle">Use the buttons below to keep score.</p>
+            <div class="container__main__round_counter">
+                <label for="playto" class="container__main__round_counter__subtitle">Playing To</label>
+                <div class="select">
+                    <select name="" id="playto">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="buttons_container">
+            <button id="player-one-plus">+1 Player One</button>
+            <button id="player-two-plus">+1 Player Two</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    <div class="copyrights"><span>Challenge By <a href="https://www.udemy.com/user/coltsteele/" target="_blank">Colt steele</a></span> <span> Coded with <span class="heart"> &hearts;</span> By <a href="https://github.com/Safi100" target="_blank">Safi Nafi</a></span></div>
+    <script src="main.js"></script>
+</body>
+</html>

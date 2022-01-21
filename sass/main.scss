@@ -1,0 +1,147 @@
+@import "variables";
+
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #4a4a4a;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.container{
+    width: 90%;
+    max-width: 337.5px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+    &__img{& > *{width:100%; display: block;}}  // img
+    &__title{
+        box-shadow:0 0.125em 0.25em rgba(10, 10, 10 ,0.1);
+        &__p{
+            box-shadow:0 0.125em 0.25em rgba(10, 10, 10 ,0.1);
+            padding: 0.75rem 1rem;
+            font-weight: 700;
+        }
+    }
+    &__main{
+        padding: 1rem;
+        &__score{
+            font-weight: 500;
+            font-size: 32px;
+            margin-bottom: .3125rem;
+            color:#363636;
+        }
+        &__subtitle{
+            line-height: 1.10;
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+        &__round_counter{
+            display: flex;
+            &__subtitle{
+                font-size: 1.5rem;
+                font-weight: 500;
+                color:#363636;
+                margin-right: 5px;
+            }
+            .select{
+                position: relative;
+                display: inline-block;
+                max-width: 100%;
+                #playto{ // select
+                    border-radius: 100px;
+                    padding:10.5px 40px 10.5px 16px;
+                    padding-left: 1em;
+                    cursor: pointer;
+                    display: block;
+                    font-size: 1em;
+                    outline: 0;
+                    color:#363636;
+                    border-color: #dbdbdb;
+                    -webkit-appearance: none;
+                    &:active,&:focus{
+                        border-color: #3273dc;
+                        box-shadow: 0 0 0 0.125em rgba(50 ,115, 220 ,0.25);
+                        }
+                        &:hover{border-color: #b5b5b5;}
+                    }
+                    &:hover::after{border-color: #363636;}
+                    &::after{               
+                        content:'';
+                        position: absolute;
+                        z-index:5;
+                        right: 1.125em;
+                        border: 3px solid #3273dc;
+                        border-radius: 2px;
+                        border-right: 0;
+                        border-top: 0;
+                        display: block;
+                        height: 0.625em;
+                        margin-top: -0.4375em;
+                        pointer-events: none;
+                        top: 50%;
+                        transform: rotate(-45deg);
+                        transform-origin: center;
+                        width: 0.625em;  
+                    }
+                }
+            }
+        }
+.buttons_container{
+    display: flex;
+    flex-wrap: wrap;
+    & > *{
+        width: 50%;
+        color:$White;
+        cursor: pointer;
+        font-size:20px;
+        padding: 5px;
+        border-color: transparent;
+    }
+    #player-one-plus{
+        background:$player-one-button;
+        &:hover{background:#00c4a7;}
+    }
+    #player-two-plus{
+        background:$player-two-button;
+        &:hover{background: #2793da;}
+    }
+    #reset{
+        width: 100%; background:$reset-button;
+        &:hover{background: #f03a5f;}
+    }
+    & > *[disabled]{opacity: .5; cursor: not-allowed;} // when game end disabled click on button 1 and button 2
+}
+}
+
+// color text when game end
+.winner{color:#48c774}
+.loser{color:#f14668}
+
+.copyrights{
+    font-size: 14px;
+    color: black;
+    margin-top: 7px;
+    .heart{color: red;}
+    a{
+        color: rgb(255, 0, 212);
+        font-weight: 700;
+        text-decoration: underline wavy rgb(255, 0, 212);
+    }
+}
+@media screen and (max-width:319px) {
+    .copyrights{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
